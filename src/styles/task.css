@@ -1,0 +1,95 @@
+.task {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 0.1em solid hsl(236, 9%, 61%);
+	padding: 1em;
+	cursor: move;
+}
+
+.task:last-child {
+	border-color: transparent;
+}
+
+.check-task-text {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.check {  
+	position: relative;    
+	aspect-ratio: 1;  
+	width: 2em;  
+	border-radius: 50%;  
+/* 	background-image: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));  */
+	cursor: pointer;  
+	display: flex;  
+	align-items: center;  
+	justify-content: center;   
+	outline: none;  
+	border: 2px solid transparent; 
+}  
+
+.check.day {
+	background-color: darkgray;
+}
+
+
+.check:hover {
+	background-image: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)); 
+}
+
+.check::before {
+	content: "";
+	background-color: hsl(237, 14%, 26%);
+	width: 105%;
+	height: 105%;
+	border-radius: 50%;
+	aspect-ratio: 1;
+	z-index: 1;
+}
+
+.check.day::before {
+	background-color: white;
+
+}
+
+.check.checked {
+	background-image: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%)); 
+}
+
+.check.checked::before {
+	content: none;
+}
+
+/* =================== */
+
+.task-text.night {
+	color: white;
+}
+
+.task-text.day {
+	color: hsl(235, 24%, 19%);
+}
+.delete {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	opacity: 0;
+}
+
+.task:hover .delete {
+	opacity: 1;
+}
+
+.task.completed .task-text {
+	text-decoration: line-through;
+	color: hsl(236, 9%, 61%);
+}
+
+@media (max-width: 35em) {
+	.task-text {
+		font-size: 0.9em;
+	}
+}

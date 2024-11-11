@@ -1,0 +1,21 @@
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 2em;
+}
+
+.header h2 {
+	font-size: 2em;
+	color: white;
+}
+
+.icons {
+	cursor: pointer;
+}
+
+.icons .day, .icons .night {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}

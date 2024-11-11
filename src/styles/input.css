@@ -1,0 +1,41 @@
+.input-cont {
+	display: flex;
+	gap: 1em;
+	padding: 1em;
+	border-radius: 0.5em;
+}
+
+.input-cont.day {
+	background-color: white;
+}
+
+.input-cont.night {
+	background-color: hsl(237, 14%, 26%);
+}
+
+.input-cont .circle{
+	min-width: 1.5em;
+	border: 0.1em solid white;
+	aspect-ratio: 1;
+	border-radius: 50%;
+}
+
+.input-cont.day .circle {
+	border-color: hsl(234, 11%, 52%)
+}
+
+.input-cont.night .circle {
+	border-color:  hsl(0, 0%, 98%);
+}
+
+.input-cont input {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font-size: 1.2em;
+	flex: 1;
+}
+
+.input-cont.night input {
+	color: white;
+}

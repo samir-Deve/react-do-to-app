@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+
+* {
+	padding: 0;
+	margin: 0;
+	font-family: "Josefin Sans", sans-serif;
+	box-sizing: border-box;
+} 
+
+.wrapper {  
+	position: relative;
+	height: 100vh;  
+	width: 100%;   
+	display: flex;  
+	flex-direction: column;  
+	overflow: hidden; /* Prevent overflow */  
+}  
+
+
+header {  
+	flex: 1;  
+} 
+
+.components {
+	display: flex;
+	justify-content: center;
+}
+
+footer {
+	flex: 2;
+	background-color: blue;
+}
+
+main {
+	position: absolute;
+	top: 5%;
+	width: 90%;
+	display: flex;
+	flex-direction: column;
+}
+
+.tasks {
+	border-top-left-radius: 0.5em;
+	border-top-right-radius: 0.5em;
+	margin-top: 2em;
+}
+
+.tasks.day {
+	background-color: hsl(0, 0%, 98%);
+	box-shadow: 0.5em 0.5em 5em hsl(233, 11%, 84%);
+}
+
+.tasks.night {
+	background-color: hsl(237, 14%, 26%);;
+}
+
+
+/* bg switch styles */
+
+header.day { 
+	background-image: url("../assets/images/bg-mobile-dark.jpg");
+	background-size: cover; 
+	background-position: center; 
+}
+
+header.night {
+	background-image: url("../assets/images/bg-mobile-light.jpg");
+	background-size: cover; 
+	background-position: center; 
+}
+
+footer.night {
+	background-color: hsl(235, 24%, 19%);
+}
+
+footer.day {
+	background-color: hsl(0, 0%, 98%);
+}
+
+/* Filter  design */
+
+.list-cont-footer {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+	border-bottom-left-radius: 0.5em;
+	border-bottom-right-radius: 0.5em;
+	border-top: 0.1em solid hsl(236, 9%, 61%);
+	font-size: 0.9em;
+}
+.tasks.day ~ .list-cont-footer{
+	background-color: hsl(0, 0%, 98%);
+	box-shadow: 0.5em 5em 5em hsl(233, 11%, 84%);
+}
+
+.tasks.night ~ .list-cont-footer{
+	background-color: hsl(237, 14%, 26%);
+}
+
+.list-cont-footer > * , .fitlers > * {
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	color: hsl(234, 11%, 52%);
+}
+
+.tasks.night ~ .list-cont-footer > *:hover , .fitlers > *:hover {
+	color: white;
+}
+
+.tasks.day ~ .list-cont-footer > *:hover , .fitlers > *:hover {
+	color: black;
+}
+
+
+.fitlers {
+	display: flex;
+	gap: 0.5em;
+}
+
+.list-cont-footer .bottom-text {
+	color: hsl(236, 9%, 61%);
+	position: absolute;
+	top: 11em;
+	width: 100%;
+	text-align: center;
+}
+
+@media (max-width: 45em) {
+/* 	.list-cont-footer {
+		justify-content: space-between;
+	} */
+	.list-cont-footer .fitlers {
+		position: absolute;
+		top: 5em;
+		left: 0em;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		gap: 1em;
+		padding: 1em;
+		border-radius: 0.5em;
+	}
+	.tasks.day ~ .list-cont-footer .fitlers{
+		background-color: hsl(0, 0%, 98%);
+		box-shadow: 0.5em 0.5em 5em hsl(233, 11%, 84%);
+	}
+	.tasks.day ~ .list-cont-footer .fitlers > *:hover {
+		color: black;
+	}
+	
+	.tasks.night ~ .list-cont-footer .fitlers{
+		background-color: hsl(237, 14%, 26%);
+	}
+
+	.tasks.night ~ .list-cont-footer .fitlers > *:hover {
+		color: white;
+	}
+}
+
+.list-cont-footer .all.is-on, .filt-active.is-on, .filt-completed.is-on {
+	color: hsl(220, 98%, 61%);
+	font-weight: 700;
+	font-size: 1em;
+}
+
+
+
+@media (min-width: 55em) {
+	main {
+		width: 70%;
+	}
+}
+
+@media (min-width: 35em) {
+	main {
+		width: 50%;
+	}
+	header.day {
+		background-image: url("../assets/images/bg-desktop-dark.jpg"); 
+	}
+
+	header.night {
+		background-image: url("../assets/images/bg-desktop-light.jpg");
+	}
+}
